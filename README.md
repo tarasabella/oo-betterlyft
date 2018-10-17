@@ -24,6 +24,8 @@ A Passenger should be initialized with a name as a string. After the Passenger h
   - Returns an array of all Passengers
 - `Passenger.premium_members`
   - Returns an array of all Passengers who have travelled over 100 miles in total with the service
+- `Passenger#add_ride(driver, distance)`
+  - Takes a Driver instance as an argument and creates a Ride instance with a Driver instance, a Passenger instance, and a distance
 
 #### Ride
 A Ride should be initialized with a driver (as a Driver object), a passenger (as a Passenger object), and a distance (as a float i.e. `3.2`). The distance refers to miles.

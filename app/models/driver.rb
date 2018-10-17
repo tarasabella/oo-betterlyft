@@ -1,6 +1,5 @@
 class Driver
   attr_reader :name
-
   @@all = []
 
   def initialize(name)
@@ -20,19 +19,12 @@ class Driver
     rides.map{|ride| ride.passenger.name}.uniq
   end
 
-  def self.mileage_cap(distance)
-    self.all.select{|driver| driver.total_distance > distance}
+  def distance_driven
+    rides.inject(0){|sum, ride| sum + ride.distance}
   end
 
-  # def log_new_ride(passenger, distance)
-  #   new_ride = Ride.new(self, passenger, distance)
-  # end
-
-  # private
-  def total_distance
-    sum = 0
-    rides.each {|ride| sum += ride.distance}
-    sum
+  def self.mileage_cap(distance)
+    @@all.select{|driver| driver.distance_driven > distance}
   end
 
 end

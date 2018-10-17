@@ -6,20 +6,26 @@ end
 
 
 # Put your variables here~!
+olivia = Passenger.new("Olivia")
+carson = Passenger.new("Carson")
+alex = Passenger.new("Alex")
 
-kat = Driver.new("Kat")
-steven = Driver.new("Steven")
 
-andy = Passenger.new("Andy")
-anthony = Passenger.new("Anthony")
-hugo = Passenger.new("Hugo")
-jane = Passenger.new("Jane")
+hassan = Driver.new("Hassan")
+tien = Driver.new("Tien")
+matt = Driver.new("Matt")
+jane = Driver.new("Jane")
 
-ride1 = Ride.new(kat, anthony, 55.5)
-ride2 = Ride.new(kat, hugo, 33.5)
-ride3 = Ride.new(steven, hugo, 18.2)
-ride4 = Ride.new(steven, jane, 20.0)
-ride5 = Ride.new(steven, hugo, 50)
-ride6 = Ride.new(kat, jane, 100.6)
+ride1 = Ride.new(hassan, olivia, 100)
+ride2 = Ride.new(jane, carson, 3.4)
+ride3 = Ride.new(matt, alex, 200)
+ride4 = Ride.new(jane, olivia, 80)
+ride4 = Ride.new(jane, olivia, 100)
+ride4 = Ride.new(tien, alex, 10)
+
+
+
+
+
 
 binding.pry
