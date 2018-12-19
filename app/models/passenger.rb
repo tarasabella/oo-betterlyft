@@ -1,8 +1,9 @@
 class Passenger
   attr_reader :name
+
   @@all = []
 
-  def initialize(name)
+  def initialize(name = nil)
     @name = name
     @@all << self
   end
@@ -12,30 +13,38 @@ class Passenger
   end
 
   def rides
-    Ride.all.select{|ride| ride.passenger == self}
+    Ride.all.select do |ride|
+      ride.passenger == self
+    end
   end
 
   def drivers
-    # rides.map(&:driver).uniq
-    rides.map{|ride| ride.driver}.uniq
-  end
-
-  def total_distance
-    total = 0
-    rides.each do |ride|
-      total += ride.distance
-    end
-    total
-  end
-
-  def self.premium_members
-    self.all.select do |passenger|
-      passenger.total_distance > 100
-    end
+    # Ride.all.select{|ride| ride.driver == self}
+    rides.map{|ride| ride.driver}
+    # same as self.rides
   end
 
   def add_ride(driver, distance)
     Ride.new(driver, self, distance)
+  end
+
+  def total_distance
+    # needs all rides
+    # collect the distances from all rides, add them together
+    # this way works! Thanks, Leizl
+    # sum = 0
+    # rides.each do |ride|
+    #   sum += ride.distance
+    # end
+    # sum
+    rides.inject(0) {|sum, ride| sum + ride.distance }
+  end
+
+  def self.premium_members
+    # need array of preium members
+    self.all.select do |passenger|
+      passenger.total_distance > 100
+    end
   end
 
 end

@@ -6,25 +6,20 @@ end
 
 
 # Put your variables here~!
-olivia = Passenger.new("Olivia")
-carson = Passenger.new("Carson")
-alex = Passenger.new("Alex")
+simon = Passenger.new("Simon")
+jeff = Passenger.new("Jeff")
+rhu = Passenger.new("Rhuwell")
 
-
-hassan = Driver.new("Hassan")
-tien = Driver.new("Tien")
-matt = Driver.new("Matt")
+tara = Driver.new("Tara")
+leizl = Driver.new("Leizl")
 jane = Driver.new("Jane")
 
-ride1 = Ride.new(hassan, olivia, 100)
-ride2 = Ride.new(jane, carson, 3.4)
-ride3 = Ride.new(matt, alex, 200)
-ride4 = Ride.new(jane, olivia, 80)
-ride4 = Ride.new(jane, olivia, 100)
-ride4 = Ride.new(tien, alex, 10)
-
-
-
+ride1 = Ride.new(tara, rhu, 50.0)
+ride2 = Ride.new(tara, simon, 5.0)
+ride3 = Ride.new(jane, jeff, 5.0)
+ride4 = Ride.new(leizl, jeff, 5.0)
+ride5 = Ride.new(tara, rhu, 70.8)
+ride6 = Ride.new(jane, simon, 100.8)
 
 
 
